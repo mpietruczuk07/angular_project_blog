@@ -1,0 +1,37 @@
+<div class="head-container">
+    <app-search-component (searchedTextChanged)="onSearchTextEntered($event)"></app-search-component>
+    <p><span>or</span></p>
+    <app-filter-component (chosenCategoryChanged)="onChosenCat($event)"></app-filter-component>
+</div>
+
+<h1 style="text-align: center; margin-top: 20px">
+    Recent posts
+</h1>
+
+<div class="container">
+    <div *ngFor="let post of postsList">
+        <mat-card
+            *ngIf="(searchText === '' || post.title.toLowerCase().includes(searchText)) && (selectedCategory === '' || post.category === selectedCategory || selectedCategory == undefined)"
+            setBackground>
+            <mat-card-header>
+                <mat-card-title>{{post.title}}</mat-card-title>
+                <mat-card-subtitle>{{post.category}}</mat-card-subtitle>
+                <mat-card-subtitle>
+                    <mat-icon>date_range</mat-icon>{{post.date | date:'longDate'}}
+                </mat-card-subtitle>
+                <mat-card-subtitle>Author: {{post.author}}</mat-card-subtitle>
+            </mat-card-header>
+            <hr>
+            <img mat-card-image src="{{post.image}}" alt="Post image">
+            <hr>
+            <mat-card-content>
+                <p *ngIf="post.content.length <= 100">{{post.content}}</p>
+                <p *ngIf="post.content.length > 100">{{post.content | slice:0:100}}...</p>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-button color="primary" (click)="onSelect(post)">Read more</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

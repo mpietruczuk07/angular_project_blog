@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="title">{{title}}</span>
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+    <a *ngIf="authGuard.canActivate()" [routerLink]=" ['/login']" routerLinkActive="router-link-active">Login</a>
+    <a *ngIf="!authGuard.canActivate()" [routerLink]="['/logout']" routerLinkActive="router-link-active"
+      (click)="authGuard.deActivate()">Logout</a>
+    <a *ngIf="authGuard.canActivate()" [routerLink]="['/signup']" routerLinkActive="router-link-active">Sign Up</a>
+    <a *ngIf="!authGuard.canActivate() && roleGuard.canSee()" [routerLink]="['/admin']"
+      routerLinkActive="router-link-active">Admin
+      Dashboard</a>
+    <a *ngIf="!authGuard.canActivate()" [routerLink]="['/profile/', userid]" routerLinkActive="router-link-active">My
+      profile</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
+<lib-ng-toast></lib-ng-toast>

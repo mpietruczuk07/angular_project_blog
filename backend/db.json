@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "title": "New Post 1",
+      "category": "Cat1",
+      "content": "First post in database.",
+      "date": "2022-11-03T23:00:00.000Z",
+      "author": "Mateusz",
+      "image": "https://www.mikereyfman.com/Photography-New-Releases/Gallery-2/photos/MR0101.jpg",
+      "id": 1
+    },
+    {
+      "title": "Nowy post2",
+      "category": "Cat6",
+      "content": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
+      "date": "2022-11-29T14:18:57.558Z",
+      "author": "Mateusz",
+      "image": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": [
+    {
+      "photo_url": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80",
+      "description": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ",
+      "id": 1
+    },
+    {
+      "photo_url": "https://toppng.com/uploads/preview/letter-a-png-11552941435fskk9pyn7o.png",
+      "description": "Hi! I am an administrator of this page.",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "photo_url": "",
+      "description": ""
+    },
+    {
+      "photo_url": "https://toppng.com/uploads/preview/letter-a-png-11552941435fskk9pyn7o.png",
+      "description": "Admin's profile page. I am the boss!",
+      "id": 4
+    },
+    {
+      "photo_url": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80",
+      "description": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ",
+      "id": 5
+    },
+    {
+      "photo_url": "",
+      "description": "",
+      "id": 6
+    },
+    {
+      "photo_url": "",
+      "description": "",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "name": "User user",
+      "username": "User1",
+      "email": "user1@user1.com",
+      "password": "zaq1@WSX",
+      "passwordConfirm": "zaq1@WSX",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "Admin admin",
+      "username": "User2 (Admin)",
+      "email": "user2@user2.com",
+      "password": "zaq1@WSX",
+      "passwordConfirm": "zaq1@WSX",
+      "role": "admin",
+      "id": 2
+    }
+  ]
+}

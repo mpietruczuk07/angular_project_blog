@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Full post details</h2>
+<div mat-dialog-content>
+    <mat-card class="details">
+        <mat-card-header>
+            <mat-card-title>{{printedPost.title}}</mat-card-title>
+            <mat-card-subtitle>{{printedPost.category}}</mat-card-subtitle>
+            <mat-card-subtitle>{{printedPost.date | date:'longDate'}}</mat-card-subtitle>
+            <mat-card-subtitle>Author: {{printedPost.author}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <img mat-card-image src="{{printedPost.image}}" alt="Post image">
+            <p>{{printedPost.content}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button mat-dialog-close color="warn">Close</button>
+        </mat-card-actions>
+
+    </mat-card>
+</div>

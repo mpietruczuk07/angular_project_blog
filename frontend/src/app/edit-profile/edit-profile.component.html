@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Edit your profile</h1>
+<div mat-dialog-content class="mat-dialog-window">
+    <form #f="ngForm" [formGroup]="profileForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Profile photo</mat-label>
+            <input placeholder="Profile photo" matInput name="photo_url" formControlName="photo_url">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Content (min 20 characters)</mat-label>
+            <textarea matInput #content minlength="20" maxlength="200" name="description"
+                formControlName="description"></textarea>
+            <mat-hint align="end">{{content.value.length}} / 1000</mat-hint>
+        </mat-form-field>
+    </form>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" *ngIf="!f.valid" disabled cdkFocusInitial>Save</button>
+        <button mat-raised-button color="primary" [mat-dialog-close] *ngIf="f.valid" cdkFocusInitial
+            (click)="updateProfile()">Save</button>
+        <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    </div>
+</div>

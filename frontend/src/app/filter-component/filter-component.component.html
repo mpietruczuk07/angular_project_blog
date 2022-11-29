@@ -1,0 +1,10 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Select category:</mat-label>
+        <mat-select (selectionChange)="onChosenCategoryChanged()" [(ngModel)]="chosenCategory">
+            <mat-option selected>--Select one---</mat-option>
+            <mat-option *ngFor=" let option of optionsList" value="{{option}}" (change)="onChosenCategoryChanged()">
+                {{option}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

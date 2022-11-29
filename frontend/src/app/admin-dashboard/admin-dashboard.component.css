@@ -1,0 +1,33 @@
+.container{
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.heading{
+  margin-top: 20px;
+}
+
+.heading h1{
+  font-size: 36px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 15%;
+}
+
+.title{
+  width: 25%;
+}
+
+.action-buttons{
+  margin-top: 20px;
+}

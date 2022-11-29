@@ -1,0 +1,112 @@
+<!-- <h1 mat-dialog-title>Edit the selected post</h1>
+<div mat-dialog-content>
+    <form #f="ngForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input placeholder="Title" matInput [(ngModel)]="editData.Title" name="title" required minlength="3">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="editData.Category" name="category" required>
+                <mat-option *ngFor="let category of categoryList" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Content</mat-label>
+            <textarea matInput #content maxlength="1000" [(ngModel)]="editData.Content" name="content" required
+                minlength="3" maxlength="1000"></textarea>
+            <mat-hint align="end">{{content.value.length}} / 1000</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Date published</mat-label>
+            <input matInput [matDatepicker]="datepicker" [(ngModel)]="editData.addDate" name="date" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Author</mat-label>
+            <mat-select [(ngModel)]="editData.Author" name="author" required>
+                <mat-option *ngFor="let author of authorsList" [value]="author">
+                    {{author}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <div mat-dialog-actions>
+        <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Save</button>
+        <button mat-button [mat-dialog-close]="editData" *ngIf="f.valid" cdkFocusInitial>Save</button>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+    </div>
+</div> -->
+
+<h1 mat-dialog-title>Edit selected post</h1>
+<div mat-dialog-content class="mat-dialog-window">
+    <form #f="ngForm" [formGroup]="postForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input placeholder="Title" matInput name="title" formControlName="title">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select name="category" formControlName="category">
+                <mat-option *ngFor="let category of categoryList" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Image link</mat-label>
+            <input matInput name="image" formControlName="image">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Content</mat-label>
+            <textarea matInput #content maxlength="1000" name="content" formControlName="content" minlength="3"
+                maxlength="1000"></textarea>
+            <mat-hint align="end">{{content.value.length}} / 1000</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Date published</mat-label>
+            <input matInput [matDatepicker]="datepicker" name="date" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Author</mat-label>
+            <mat-select name="author" formControlName="author">
+                <mat-option *ngFor="let author of authorsList" [value]="author">
+                    {{author}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" *ngIf="!f.valid" disabled cdkFocusInitial>Save</button>
+        <button mat-raised-button color="primary" [mat-dialog-close] *ngIf="f.valid" cdkFocusInitial
+            (click)="updatePost()">Save</button>
+        <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    </div>
+</div>

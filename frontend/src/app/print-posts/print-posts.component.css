@@ -1,0 +1,30 @@
+.head-container{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.head-container p{
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card{
+    margin-top: 15px;
+    min-width: 800px;
+    max-width: 800px;
+}
+
+mat-card-image{
+    background-size: cover;
+}
